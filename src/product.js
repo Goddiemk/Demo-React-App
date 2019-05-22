@@ -14,15 +14,7 @@ export default class Product extends React.Component {
   }
 
   render() {
-    const {
-      productImageUrl,
-      handleUpVote,
-      votes,
-      url,
-      title,
-      description,
-      submitterAvatarUrl,
-    } = this.props;
+    const { productImageUrl, votes, url, title, description, submitterAvatarUrl } = this.props;
     return (
       <div className="item">
         <div className="image">
@@ -30,7 +22,7 @@ export default class Product extends React.Component {
         </div>
         <div className="middle aligned content">
           <div className="header">
-            <button type="button" onClick={handleUpVote}>
+            <button type="button" onClick={this.handleUpVote}>
               <i className="large caret up icon" />
             </button>
             {votes}
@@ -58,5 +50,4 @@ Product.propTypes = {
   submitterAvatarUrl: PropTypes.string.isRequired,
   productImageUrl: PropTypes.string.isRequired,
   onVote: PropTypes.func.isRequired,
-  handleUpVote: PropTypes.func.isRequired,
 };
